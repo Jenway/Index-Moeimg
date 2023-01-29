@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:html/parser.dart' show parse;
-import 'package:index/widgets/site_container.dart';
-import 'package:xpath_selector_html_parser/xpath_selector_html_parser.dart';
-import 'pic_page.dart';
-import 'package:index/common/global.dart';
-import 'package:index/network/parse_method.dart';
+
 import 'package:dio/dio.dart';
 import 'package:dio_http_cache/dio_http_cache.dart';
+
+import 'package:html/parser.dart' show parse;
+import 'package:xpath_selector_html_parser/xpath_selector_html_parser.dart';
+
+import 'pic_page.dart';
+import 'package:index/network/parse_method.dart';
+import 'package:index/widgets/site_container.dart';
 
 // how this page works:
 // 1. with the main url, we can get the image page's home page
@@ -74,23 +76,6 @@ class _ImageGuideState extends State<ImageGuide> {
     );
   }
 
-  Future<List<String>> _getPage({
-    required String url,
-  }) async {
-    dio.interceptors
-        .add(DioCacheManager(CacheConfig(baseUrl: url)).interceptor);
-    final response = await dio.get(
-      url,
-      options: Options(
-        headers: {
-          'User-Agent':
-              'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/92.0.4515.159 Safari/537.36',
-        },
-      ),
-    );
-    return PageParse.moeImg(response: response);
-  }
-
   // download html as string
   Future<List<Widget>> _getSite() async {
     dio.interceptors
@@ -106,25 +91,15 @@ class _ImageGuideState extends State<ImageGuide> {
     );
     var document = parse(response.data).documentElement!;
     var html = HtmlXPath.node(document);
-    return getInnerMoeImg(html);
+    return getSitePages(html);
   }
 
-  List<Widget> getInnerPage({
-    required String rawHtml,
-    required String address,
-    required List<String> rule,
-  }) {
-    var document = parse(rawHtml).documentElement!;
-    var html = HtmlXPath.node(document);
-
-    return getInnerMoeImg(html);
-  }
-
-  List<Widget> getInnerMoeImg(HtmlXPath html) {
+  List<Widget> getSitePages(HtmlXPath html) {
     var albumList = List<Widget>.generate(widget.pageNumofSite, (i) {
       String src = SiteParse.src[widget.siteParseMethod](html, i);
       String href = SiteParse.href[widget.siteParseMethod](html, i);
-      String title = SiteParse.title[widget.siteParseMethod](html, i);
+      String title =
+          SiteParse.title[widget.siteParseMethod](html, i).toString();
 
       return Card(
         child: InkWell(
@@ -137,6 +112,25 @@ class _ImageGuideState extends State<ImageGuide> {
     });
 
     return albumList;
+  }
+
+  Future<List<String>> _getPage({
+    required String url,
+  }) async {
+    dio.interceptors
+        .add(DioCacheManager(CacheConfig(baseUrl: url)).interceptor);
+    final response = await dio.get(
+      url,
+      options: Options(
+        headers: {
+          'User-Agent':
+              'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/92.0.4515.159 Safari/537.36',
+        },
+      ),
+    );
+    final document = parse(response.data).documentElement!;
+    final html = HtmlXPath.node(document);
+    return PageParse.page[widget.siteParseMethod](html: html);
   }
 
   @override

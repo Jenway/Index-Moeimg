@@ -32,9 +32,8 @@ class _MyAppState extends State<MyApp> {
       title: 'Index! moeImg ԅ(¯﹃¯ԅ)',
       theme: ThemeData(
         brightness: brightness,
-        bottomAppBarColor: bakColor,
         primarySwatch: Colors.blue,
-        appBarTheme: AppBarTheme(backgroundColor: bakColor),
+        appBarTheme: AppBarTheme(backgroundColor: bakColor), bottomAppBarTheme: BottomAppBarTheme(color: bakColor),
       ),
       // darkTheme: ThemeData.dark(),
       home: HomePage(
