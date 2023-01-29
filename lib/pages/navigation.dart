@@ -58,7 +58,6 @@ class NavigationPage extends StatelessWidget {
                         mainURL:
                             'https://moeimg.net/category/%E3%82%A8%E3%83%AD%E7%94%BB%E5%83%8F',
                         pageNumofSite: pageNumPerSite[0],
-                       
                         siteParseMethod: siteParseMethod[0],
                         siteHomeTitle: 'Moeimg エロ画像',
                       );
@@ -84,7 +83,6 @@ class NavigationPage extends StatelessWidget {
                         mainURL:
                             'https://gennji.com/category/%e3%80%90-%e9%9d%9e%e3%83%bb%e5%be%ae%e3%82%a8%e3%83%ad%e7%94%bb%e5%83%8f-%e3%80%91/',
                         pageNumofSite: pageNumPerSite[1],
-                        
                         siteParseMethod: siteParseMethod[1],
                         siteHomeTitle: 'Gennji 非・微エロ画像',
                       );
@@ -109,7 +107,6 @@ class NavigationPage extends StatelessWidget {
                         mainURL:
                             'https://gennji.com/category/%e3%80%90-%e3%82%a8%e3%83%ad%e7%94%bb%e5%83%8f-%e3%80%91/',
                         pageNumofSite: pageNumPerSite[1],
-
                         siteParseMethod: siteParseMethod[1],
                         siteHomeTitle: 'Gennji エロ画像',
                       );
@@ -143,20 +140,19 @@ class NavigationPage extends StatelessWidget {
               },
             ),
           ),
-                    Card(
+          Card(
             child: ListTile(
-              title: const Text('Gennji キャラ'),
+              title: const Text('今夜のシチュエロ画像'),
               leading: const CircleAvatar(
                 backgroundImage: CachedNetworkImageProvider(
-                    'https://icons.feedercdn.com/gennji.com'),
+                    'https://icons.feedercdn.com/situero.com'),
               ),
               onTap: () {
                 Navigator.of(context).push(
                   MaterialPageRoute<void>(
                     builder: (BuildContext context) {
                       return ImageGuide(
-                        mainURL:
-                            'https://situero.com/',
+                        mainURL: 'https://situero.com/',
                         pageNumofSite: pageNumPerSite[2],
                         siteParseMethod: siteParseMethod[2],
                         siteHomeTitle: '今夜のシチュエロ画像',
@@ -167,8 +163,6 @@ class NavigationPage extends StatelessWidget {
               },
             ),
           ),
-
-
         ],
       ),
     );

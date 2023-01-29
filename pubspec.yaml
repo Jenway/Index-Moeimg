@@ -39,7 +39,7 @@ dependencies:
     dio: ^4.0.6
     cached_network_image: ^3.2.3
     photo_view: ^0.14.0
-    permission_handler: ^10.2.0
+    # permission_handler: ^10.2.0
     dio_http_cache: ^0.3.0
 
 dev_dependencies:
@@ -99,7 +99,7 @@ msix_config:
     publisher_display_name: JenwayHere
     identity_name: jenway.here.index
     capabilities: internetClient
-    logo_path: D:\codeLanguage\flutter\examples\index\assets\INDEX.png
+    logo_path: assets\INDEX.png
     app_installer: #<-- app installer configuration
         hours_between_update_checks: 0
         automatic_background_task: true
