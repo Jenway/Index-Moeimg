@@ -96,8 +96,7 @@ class NavigationPage extends StatelessWidget {
               },
             ),
           ),
-          Card(
-            
+          Card(          
             child: ListTile(
               
               // leading: CachedNetworkImage(
