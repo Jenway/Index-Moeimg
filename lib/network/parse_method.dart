@@ -33,9 +33,22 @@ class SiteParse {
       .query('//*[@id="tile-2"]/div[${i + 1}]/section/h2/a/text()')
       .attrs[0]!;
 
-  static List src = [siteSrcMoeimg, siteSrcGnnji];
-  static List href = [siteHrefMoeimg, siteHrefGnnji];
-  static List title = [siteTitleMoeimg, siteTitleGnnji];
+  // 今夜のシチュエロ画像
+
+//*[@id^="post-"]/figure/a/@href
+//*[@id^="post-"]/figure/a/@title
+//*[@id^="post-"]/figure/a/img/@src
+
+  static siteSrcJinshi(HtmlXPath html, int i) =>
+      html.query('//*[@id^="post-"]/figure/a/img/@src').attrs[i]!;
+  static siteHrefJinshi(HtmlXPath html, int i) =>
+      html.query('//*[@id^="post-"]/figure/a/@href').attrs[i]!;
+  static siteTitleJinshi(HtmlXPath html, int i) =>
+      html.query('//*[@id^="post-"]/figure/a/@title').attrs[i]!;
+
+  static List src = [siteSrcMoeimg, siteSrcGnnji, siteSrcJinshi];
+  static List href = [siteHrefMoeimg, siteHrefGnnji, siteHrefJinshi];
+  static List title = [siteTitleMoeimg, siteTitleGnnji, siteTitleJinshi];
 
   // is there any explict way to do this?
 }
@@ -54,5 +67,14 @@ class PageParse {
       .attrs
       .cast<String>();
 
-  static List<Function> page = [moeImg, gnnji];
+//*[@id="the-content"]/p[1]/a/img
+//*[@id="the-content"]/p[2]/a[1]/img
+//*[@id="the-content"]/p[2]/a[@target="_blank"]/img
+
+  static List<String> jinshi({required HtmlXPath html}) => html
+      .query('//*[@id="the-content"]/p[2]/a[@target="_blank"]/img/@src')
+      .attrs
+      .cast<String>();
+
+  static List<Function> page = [moeImg, gnnji, jinshi];
 }

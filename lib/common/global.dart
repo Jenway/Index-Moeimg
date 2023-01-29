@@ -143,10 +143,12 @@ List illustationPicUrl = [
 List<int> pageNumPerSite = [
   10, //moeimg
   20, //gennji
+  20, //今夜のシチュエロ画像
 ];
 List<int> siteParseMethod = [
   0,
   1,
+  2,
 ];
 
 // class Global {

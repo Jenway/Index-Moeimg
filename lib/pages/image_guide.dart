@@ -29,14 +29,14 @@ class ImageGuide extends StatefulWidget {
   const ImageGuide(
       {Key? key,
       required this.mainURL,
-      required this.pageNumofSite,
       required this.siteParseMethod,
+      required this.pageNumofSite,
       required this.siteHomeTitle})
       : super(key: key);
   // the main url of the website
   final String mainURL;
-  final int pageNumofSite;
   final int siteParseMethod;
+  final int pageNumofSite;
   final String siteHomeTitle;
   @override
   State<ImageGuide> createState() => _ImageGuideState();
