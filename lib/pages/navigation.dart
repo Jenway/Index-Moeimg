@@ -14,10 +14,17 @@ class NavigationPage extends StatelessWidget {
       ),
       // create 2 rows of cards that will be used to navigate to the other pages
       body: GridView.count(
+        childAspectRatio: 3 / 1,
         crossAxisCount: 2,
         children: [
           Card(
+            //https://icons.feedercdn.com/moeimg.net
+            // https://img.moeimg.net/wp-content/uploads/img/moeimg_pc_2.gif
             child: ListTile(
+              leading: const CircleAvatar(
+                backgroundImage: CachedNetworkImageProvider(
+                    'https://icons.feedercdn.com/moeimg.net'),
+              ),
               title: const Text('Moeimg 非・微エロ画像'),
               onTap: () {
                 Navigator.of(context).push(
@@ -39,6 +46,10 @@ class NavigationPage extends StatelessWidget {
           Card(
             child: ListTile(
               title: const Text('Moeimg エロ画像'),
+              leading: const CircleAvatar(
+                backgroundImage: CachedNetworkImageProvider(
+                    'https://icons.feedercdn.com/moeimg.net'),
+              ),
               onTap: () {
                 Navigator.of(context).push(
                   MaterialPageRoute<void>(
@@ -56,9 +67,14 @@ class NavigationPage extends StatelessWidget {
               },
             ),
           ),
+          //https://icons.feedercdn.com/gennji.com
           Card(
             child: ListTile(
               title: const Text('Gennji 非・微エロ画像'),
+              leading: const CircleAvatar(
+                backgroundImage: CachedNetworkImageProvider(
+                    'https://icons.feedercdn.com/gennji.com'),
+              ),
               onTap: () {
                 Navigator.of(context).push(
                   MaterialPageRoute<void>(
@@ -79,6 +95,10 @@ class NavigationPage extends StatelessWidget {
           Card(
             child: ListTile(
               title: const Text('Gennji エロ画像'),
+              leading: const CircleAvatar(
+                backgroundImage: CachedNetworkImageProvider(
+                    'https://icons.feedercdn.com/gennji.com'),
+              ),
               onTap: () {
                 Navigator.of(context).push(
                   MaterialPageRoute<void>(
@@ -96,15 +116,13 @@ class NavigationPage extends StatelessWidget {
               },
             ),
           ),
-          Card(          
+          Card(
             child: ListTile(
-              
-              // leading: CachedNetworkImage(
-              //   imageUrl:
-              //       'https://gennji.com/wp-content/uploads/2020/01/b3f7ba1f9160738e1a44a55fc10f3f96.png',
-              //   fit: BoxFit.cover,
-              // ),
               title: const Text('Gennji キャラ'),
+              leading: const CircleAvatar(
+                backgroundImage: CachedNetworkImageProvider(
+                    'https://icons.feedercdn.com/gennji.com'),
+              ),
               onTap: () {
                 Navigator.of(context).push(
                   MaterialPageRoute<void>(
