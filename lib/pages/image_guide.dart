@@ -31,13 +31,15 @@ class ImageGuide extends StatefulWidget {
       required this.mainURL,
       required this.siteParseMethod,
       required this.pageNumofSite,
-      required this.siteHomeTitle})
+      required this.siteHomeTitle,
+      this.isAppbar = true})
       : super(key: key);
   // the main url of the website
   final String mainURL;
   final int siteParseMethod;
   final int pageNumofSite;
   final String siteHomeTitle;
+  final bool isAppbar;
   @override
   State<ImageGuide> createState() => _ImageGuideState();
 }
@@ -138,9 +140,11 @@ class _ImageGuideState extends State<ImageGuide> {
     var albumList = _getSite();
 
     return Scaffold(
-      appBar: AppBar(
-        title: Text(widget.siteHomeTitle),
-      ),
+      appBar: widget.isAppbar
+          ? AppBar(
+              title: Text(widget.siteHomeTitle),
+            )
+          : null,
       body: FutureBuilder(
         future: albumList,
         builder: (BuildContext context, AsyncSnapshot snapshot) {

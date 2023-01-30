@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:index/pages/navigation.dart';
-
+import 'package:index/pages/image_guide.dart';
 import 'pic_page.dart';
 import '../moeimg.dart';
-import '../future_build_route.dart';
 import 'about_page.dart';
 import 'setting_page.dart';
 import 'theme_page.dart';
@@ -20,14 +19,6 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  int _counter = 0;
-  void _incrementCounter() {
-    setState(() {
-      _counter++;
-      // widget.changeTheme(Colors.amber, Brightness.dark, 'World');
-    });
-  }
-
   void _showSettings() {
     Navigator.of(context).push(
       MaterialPageRoute<void>(
@@ -129,19 +120,13 @@ class _HomePageState extends State<HomePage> {
               icon: const Icon(Icons.file_download_outlined)),
         ],
       ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            const Text(
-              'You have pushed the button this many times:',
-            ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headlineMedium,
-            ),
-          ],
-        ),
+      body: const ImageGuide(
+        mainURL:
+            'https://gennji.com/category/%e3%80%90-%e9%9d%9e%e3%83%bb%e5%be%ae%e3%82%a8%e3%83%ad%e7%94%bb%e5%83%8f-%e3%80%91/',
+        pageNumofSite: 20,
+        siteParseMethod: 1,
+        siteHomeTitle: 'Gennji 非・微エロ画像',
+        isAppbar: false,
       ),
       drawer: Drawer(
         child: Column(
@@ -199,7 +184,9 @@ class _HomePageState extends State<HomePage> {
                       Navigator.of(context).push(
                         MaterialPageRoute<void>(
                           builder: (BuildContext context) {
-                            return const FutureBuilderRoute();
+                            return const Scaffold(
+                              body: NavigationPage(),
+                            );
                           },
                         ),
                       );
@@ -251,8 +238,8 @@ class _HomePageState extends State<HomePage> {
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
         tooltip: 'Increment',
+        onPressed: () {},
         child: const Icon(Icons.add),
       ),
     );
