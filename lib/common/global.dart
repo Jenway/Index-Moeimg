@@ -48,7 +48,11 @@ final List illustraionPicList = [
   ['桃色虹画像', 'http://momoniji.com/'], //yes
   ['画像(2次) - HNあんてな', 'http://hn-antena.com/gazo2.html'], //fast
   ['可愛い二次少女大好き', 'https://lolipedia.org/'], //yes
-  ['二次エロ画庫', 'https://2jiero.net/'],//大失败
+  ['二次エロ画庫', 'https://2jiero.net/'], //大失败
+  ['にじろん', 'https://nizilon.com/'], //小失败p.s.图不错可惜没了
+  ['フェチエロ画像保管庫', 'https://loveliveforever.com/'], //呜呜呜
+  ['あだまん', 'https://adaman-ero.com/'], //yaho！
+  ['にじんちゅ', 'http://nijinchu.com/'],// www
   ['みゃおーん 二次エロ画像', 'https://myaoon.com/niji/'],
   ['二次元エロ画像萌え２', 'http://nijierogazou.moemoe.xyz/'],
   ['エログちゃんねるあんてな', 'https://www.elog-ch.net/'],
@@ -56,7 +60,7 @@ final List illustraionPicList = [
   ['画像,２次元,３次元,ブログ,まとめ,アンテナ', 'https://img.favsite.jp/'],
   ['BAN=>Ｍ４えくそだす！', 'http://m4ex.com/'],
   ['BAN=>ドウコレ', 'http://doucolle.net/'],
-  ['にじもえ！', 'http://nijimoemoe.com/'],
+  ['HalfBan=>にじもえ！', 'http://nijimoemoe.com/'],
   ['FANZA=>えろまん', 'https://eroman.vuevis.jp/'],
   ['BAN=>萌えエロ画像.com', 'https://二次萌えエロ画像.com/'],
   ['三次=>お宝エログ幕府', 'https://bakufu.jp/'],
@@ -87,6 +91,12 @@ const List<List> siteListUnEro = [
     'https://icons.feedercdn.com/moeimg.net',
     'https://moeimg.net/category/%E9%9D%9E%E3%82%A8%E3%83%AD%E3%83%BB%E5%BE%AE%E3%82%A8%E3%83%AD%E7%94%BB%E5%83%8F',
     0,
+  ],
+  [
+    'あだまん 非・微エロ画像',
+    'https://icons.feedercdn.com/adaman-ero.com',
+    'https://adaman-ero.com/category/%e9%9d%9e%e3%82%a8%e3%83%ad/#wrapper',
+    14,
   ],
   [
     '厳選2次元画像館 キャラ',
@@ -152,6 +162,12 @@ const List<List> siteListEro = [
     3
   ],
   [
+    'あだまん エロ画像',
+    'https://icons.feedercdn.com/adaman-ero.com',
+    'https://adaman-ero.com/',
+    14,
+  ],
+  [
     'イチヌケ',
     'https://icons.feedercdn.com/ichinuke.com/',
     'https://ichinuke.com/',
@@ -175,6 +191,18 @@ const List<List> siteListEro = [
     'https://erokan.net/',
     11,
   ],
+  [
+    'フェチエロ画像保管庫',
+    'https://icons.feedercdn.com/erokan.net/',
+    'https://loveliveforever.com/',
+    13,
+  ],
+  [
+    'にじんちゅ',
+    'https://icons.feedercdn.com/nijinchu.com/',
+    'https://nijinchu.com/',
+    15,
+  ],
 ];
 
 List<int> pageNumPerSite = [
@@ -191,6 +219,9 @@ List<int> pageNumPerSite = [
   30, //'ヌキヌキ二次エロ画像'
   20, //二次エロ画像館
   22, //二次エロ画庫
+  30, //'フェチエロ画像保管庫
+  20, // あだまん
+  60, //にじんちゅ
 ];
 List<int> siteParseMethod = [
   0,
@@ -206,6 +237,9 @@ List<int> siteParseMethod = [
   10,
   11,
   12,
+  13,
+  14,
+  15,
 ];
 
 // class Global {

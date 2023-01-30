@@ -180,6 +180,38 @@ class SiteParse {
       .query('//*[@class="toc grid clearfix"]/section/h2/a/text()')
       .attrs[i]!;
 
+  // 'フェチエロ画像保管庫
+  static siteSrcFetich(HtmlXPath html, int i) =>
+      html.query('//*[@id^="post"]/figure/a/img/@src').attrs[i]!;
+  static siteHrefFetich(HtmlXPath html, int i) =>
+      html.query('//*[@id^="post"]/figure/a/@href').attrs[i]!;
+  static siteTitleFetich(HtmlXPath html, int i) =>
+      html.query('//*[@id^="post"]/figure/a/@title').attrs[i]!;
+
+  //あだまん
+  static siteSrcAdaman(HtmlXPath html, int i) => html
+      .query('//*[@class="post-card-list-item post-card"]/div[1]/a/img/@src')
+      .attrs[i]!;
+  static siteHrefAdaman(HtmlXPath html, int i) => html
+      .query(
+          '//*[@class="post-card-list-item post-card"]/div[2]/div/h3/a/@href')
+      .attrs[i]!;
+  static siteTitleAdaman(HtmlXPath html, int i) => html
+      .query(
+          '//*[@class="post-card-list-item post-card"]/div[2]/div/h3/a/text()')
+      .attrs[i]!;
+
+//*[@id="contentInner"]/main/article/aside/div[1]/div[1]/div[1]/a/img
+//にじんちゅ
+  static siteSrcNijinchu(HtmlXPath html, int i) => html
+      .query('//*[@class="post-card-list-item post-card"]/div/a/img/@src')
+      .attrs[i]!;
+  static siteHrefNijinchu(HtmlXPath html, int i) => html
+      .query('//*[@class="post-card-list-item post-card"]/div/a/@href')
+      .attrs[i]!;
+  static siteTitleNijinchu(HtmlXPath html, int i) =>
+      html.query('//div[@class="entry_list_element"]/div/@title').attrs[i]!;
+
   static List src = [
     siteSrcMoeimg,
     siteSrcGnnji,
@@ -194,6 +226,9 @@ class SiteParse {
     siteSrcNukikukko,
     siteSrcNijierogazou,
     siteSrcNijierogako,
+    siteSrcFetich,
+    siteSrcAdaman,
+    siteSrcNijinchu,
   ];
   static List href = [
     siteHrefMoeimg,
@@ -209,6 +244,9 @@ class SiteParse {
     siteHrefNukikukko,
     siteHrefNijierogazou,
     siteHrefNijierogako,
+    siteHrefFetich,
+    siteHrefAdaman,
+    siteHrefNijinchu,
   ];
   static List title = [
     siteTitleMoeimg,
@@ -224,6 +262,9 @@ class SiteParse {
     siteTitleNukikukko,
     siteTitleNijierogazou,
     siteTitleNijierogako,
+    siteTitleFetich,
+    siteTitleAdaman,
+    siteTitleNijinchu,
   ];
 
   // is there any explict way to do this?
@@ -297,6 +338,21 @@ class PageParse {
       .attrs
       .cast<String>();
 
+  static List<String> fetich({required HtmlXPath html}) =>
+      html.query('//*[@id="the-content"]/p[1]/a/img/@src').attrs.cast<String>();
+  static List<String> adaman({required HtmlXPath html}) =>
+      html.query('//*[@id="nocopy"]/div//img/@src').attrs.cast<String>();
+//*[@id="nocopy"]/div[1]/img
+//*[@id="nocopy"]/div[2]/a[1]/img
+//*[@id="nocopy"]/div[2]/p[4]/a/img
+//*[@id="nocopy"]/div[2]/p[5]/a/img
+//*[@id="nocopy"]/div[2]/p[6]/a/img
+//*[@id="nocopy"]/div[2]/p[36]/a/img
+  static List<String> nijinchu({required HtmlXPath html}) => html
+      .query('//*[@id="main"]/div[1]/article/div[2]/p/a/@src')
+      .attrs
+      .cast<String>();
+
   static List<Function> page = [
     moeImg,
     gnnji,
@@ -311,5 +367,8 @@ class PageParse {
     nukikukko,
     nijierogazou,
     nijierogako,
+    fetich,
+    adaman,
+    nijinchu,
   ];
 }
