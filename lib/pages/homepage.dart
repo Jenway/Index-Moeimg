@@ -85,7 +85,13 @@ class _HomePageState extends State<HomePage> {
     Navigator.of(context).push(
       MaterialPageRoute<void>(
         builder: (BuildContext context) {
-          return const MoeImg();
+          return const ImageGuide(
+            mainURL:
+                'https://moeimg.net/category/%E9%9D%9E%E3%82%A8%E3%83%AD%E3%83%BB%E5%BE%AE%E3%82%A8%E3%83%AD%E7%94%BB%E5%83%8F',
+            pageNumofSite: 10,
+            siteParseMethod: 0,
+            siteHomeTitle: 'Moeimg 非・微エロ画像',
+          );
         },
       ),
     );
