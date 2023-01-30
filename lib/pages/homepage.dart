@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:index/pages/navigation.dart';
 import 'package:index/pages/image_guide.dart';
 import 'pic_page.dart';
-import '../moeimg.dart';
 import 'about_page.dart';
 import 'setting_page.dart';
 import 'theme_page.dart';
@@ -175,7 +174,9 @@ class _HomePageState extends State<HomePage> {
                         MaterialPageRoute<void>(
                           builder: (BuildContext context) {
                             return const Scaffold(
-                              body: NavigationPage(),
+                              body: NavigationPage(
+                                isEro: false,
+                              ),
                             );
                           },
                         ),
@@ -183,15 +184,17 @@ class _HomePageState extends State<HomePage> {
                     },
                   ),
                   ListTile(
-                    leading: const Icon(Icons.repeat_one_on_outlined),
-                    title: const Text('MEIZI'),
+                    leading: const Icon(Icons.no_adult_content_outlined),
+                    title: const Text('Ero 18+'),
                     onTap: () {
                       Navigator.pop(context);
                       Navigator.of(context).push(
                         MaterialPageRoute<void>(
                           builder: (BuildContext context) {
                             return const Scaffold(
-                              body: NavigationPage(),
+                              body: NavigationPage(
+                                isEro: true,
+                              ),
                             );
                           },
                         ),
