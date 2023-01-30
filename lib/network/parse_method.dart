@@ -126,12 +126,25 @@ class SiteParse {
 
 //虹フェチちゃんねる
 
-  static siteSrcNijifetich(HtmlXPath html, int i) =>
-      'https://nijifeti.com/wp-content/uploads/2023/01/kurokami-072-19.jpg';
+  static siteSrcNijifetich(HtmlXPath html, int i) => html
+      .query('//*[@id^="post"]/a/@style')
+      .attrs[i]!
+      .split("url('")[1]
+      .split("')")[0];
+  // style="background-image: url('https://nijifeti.com/wp-content/uploads/2023/01/kaikyaku-126-11-scaled.jpg');"
+
   static siteHrefNijifetich(HtmlXPath html, int i) =>
       html.query('//*[@id^="post"]/h2/a/@href').attrs[i]!;
   static siteTitleNijifetich(HtmlXPath html, int i) =>
       html.query('//*[@id^="post"]/h2/a/text()').attrs[i]!;
+
+//可愛い二次少女大好き
+  static siteSrcKawaii(HtmlXPath html, int i) =>
+      html.query('//*[@id="list"]/a/article/figure/img/@src').attrs[i]!;
+  static siteHrefKawaii(HtmlXPath html, int i) =>
+      html.query('//*[@id="list"]/a/@href').attrs[i]!;
+  static siteTitleKawaii(HtmlXPath html, int i) =>
+      html.query('//*[@id="list"]/a/@title').attrs[i]!;
 
   static List src = [
     siteSrcMoeimg,
@@ -143,6 +156,7 @@ class SiteParse {
     siteSrcNijilog,
     siteSrcHentaiWitch,
     siteSrcNijifetich,
+    siteSrcKawaii,
   ];
   static List href = [
     siteHrefMoeimg,
@@ -154,6 +168,7 @@ class SiteParse {
     siteHrefNijilog,
     siteHrefHentaiWitch,
     siteHrefNijifetich,
+    siteHrefKawaii,
   ];
   static List title = [
     siteTitleMoeimg,
@@ -165,6 +180,7 @@ class SiteParse {
     siteTitleNijilog,
     siteTitleHentaiWitch,
     siteTitleNijifetich,
+    siteTitleKawaii,
   ];
 
   // is there any explict way to do this?
@@ -214,6 +230,17 @@ class PageParse {
   static List<String> nijifetich({required HtmlXPath html}) =>
       html.query('//*[@id="main-content"]/ol/li/a/@href').attrs.cast<String>();
 
+  static List<String> kawaii({required HtmlXPath html}) {
+    List<String> list = html
+        .query('//*[@id^="post"]/div/p/a[@target="_blank"]/img/@src')
+        .attrs
+        .cast<String>();
+    for (var i = 0; i < list.length; i++) {
+      list[i] = 'https://lolipedia.org${list[i]}';
+    }
+    return list;
+  }
+
   static List<Function> page = [
     moeImg,
     gnnji,
@@ -224,5 +251,6 @@ class PageParse {
     nijilog,
     hentaiWitch,
     nijifetich,
+    kawaii,
   ];
 }

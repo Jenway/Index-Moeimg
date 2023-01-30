@@ -39,6 +39,7 @@ final List illustraionPicList = [
   ['厳選2次元画像館 げんにじ', 'https://gennji.com/'], // yes
   ['今夜のシチュエロ画像', 'https://situero.com/'], // fast yes
   ['画像(2次) - HNあんてな', 'http://hn-antena.com/gazo2.html'], //fast
+  ['可愛い二次少女大好き', 'https://lolipedia.org/'],//yes
   ['エログちゃんねるあんてな', 'https://www.elog-ch.net/'],
   ['二次元画像詳細検索', 'https://ascii2d.net/'],
   ['画像,２次元,３次元,ブログ,まとめ,アンテナ', 'https://img.favsite.jp/'],
@@ -54,7 +55,7 @@ final List illustraionPicList = [
   ['えっちなお姉さん。', 'http://hnalady.com/'],
   ['イチヌケ', 'https://ichinuke.com/'], // yes
   ['せくあど', 'https://sexuad.blog.fc2.com/'],
-  ['虹フェチちゃんねる', 'https://nijifeti.com/'],
+  ['虹フェチちゃんねる', 'https://nijifeti.com/'], //yes
   ['BAN=>エロログZ', 'https://erologz.com/'],
   ['えろまじょさん', 'https://hentai-witch.com/'], //yes
   ['桃色虹画像', 'http://momoniji.com/'], //yes
@@ -109,6 +110,12 @@ const List<List> siteListUnEro = [
     'https://nijifeti.com/',
     8,
   ],
+  [
+    '可愛い二次少女大好き',
+    'https://icons.feedercdn.com/lolipedia.org/',
+    'https://lolipedia.org/',
+    9,
+  ],
 ];
 
 const List<List> siteListEro = [
@@ -160,6 +167,7 @@ List<int> pageNumPerSite = [
   21, //二次ろぐぴんく
   15, //hentai-witch
   30, //虹フェチちゃんねる
+  10, //可愛い二次少女大好き
 ];
 List<int> siteParseMethod = [
   0,
@@ -171,6 +179,7 @@ List<int> siteParseMethod = [
   6,
   7,
   8,
+  9,
 ];
 
 // class Global {

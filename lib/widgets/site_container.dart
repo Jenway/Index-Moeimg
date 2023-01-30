@@ -29,19 +29,20 @@ class SiteContainer extends StatelessWidget {
             ListTile(
               subtitle: Text(
                 title,
+                softWrap: true,
                 style: const TextStyle(
-                    fontSize: 16,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.white,
-                    shadows: [
-                      Shadow(
-                        color: Colors.black,
-                        offset: Offset(1, 1),
-                        blurRadius: 1,
-                      ),
-                    ],
-                    // backgroundColor: Color.fromARGB(125, 0, 0, 0),
+                  fontSize: 16,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.white,
+                  shadows: [
+                    Shadow(
+                      color: Colors.black,
+                      offset: Offset(1, 1),
+                      blurRadius: 1,
                     ),
+                  ],
+                  // backgroundColor: Color.fromARGB(125, 0, 0, 0),
+                ),
               ),
             ),
           ],
