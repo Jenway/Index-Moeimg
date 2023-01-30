@@ -34,16 +34,26 @@ const List<String> primariesName = [
 ];
 final List illustraionPicList = [
   ['二次萌エロ画像ブログ', 'https://moeimg.net/'], //yes
-  ['みゃおーん 二次エロ画像', 'https://myaoon.com/niji/'],
-  ['二次元エロ画像萌え２', 'http://nijierogazou.moemoe.xyz/'],
   ['厳選2次元画像館 げんにじ', 'https://gennji.com/'], // yes
   ['今夜のシチュエロ画像', 'https://situero.com/'], // fast yes
+  ['キモ男陵辱同人道', 'https://kimootoko.net/'], //fast yes
+  ['二次ろぐぴんく', 'https://2ji.pink/'], //yes
+  ['えっちなお姉さん。', 'http://hnalady.com/'],
+  ['イチヌケ', 'https://ichinuke.com/'], // yes
+  ['せくあど', 'https://sexuad.blog.fc2.com/'],
+  ['虹フェチちゃんねる', 'https://nijifeti.com/'], //yes
+  ['ヌキヌキ二次エロ画像', 'https://nukigazo.com/'], //yes
+  ['二次エロ画像館', 'https://erokan.net/'], //yes
+  ['えろまじょさん', 'https://hentai-witch.com/'], //yes
+  ['桃色虹画像', 'http://momoniji.com/'], //yes
   ['画像(2次) - HNあんてな', 'http://hn-antena.com/gazo2.html'], //fast
-  ['可愛い二次少女大好き', 'https://lolipedia.org/'],//yes
+  ['可愛い二次少女大好き', 'https://lolipedia.org/'], //yes
+  ['二次エロ画庫', 'https://2jiero.net/'],//大失败
+  ['みゃおーん 二次エロ画像', 'https://myaoon.com/niji/'],
+  ['二次元エロ画像萌え２', 'http://nijierogazou.moemoe.xyz/'],
   ['エログちゃんねるあんてな', 'https://www.elog-ch.net/'],
   ['二次元画像詳細検索', 'https://ascii2d.net/'],
   ['画像,２次元,３次元,ブログ,まとめ,アンテナ', 'https://img.favsite.jp/'],
-  ['キモ男陵辱同人道', 'https://kimootoko.net/'], //fast yes
   ['BAN=>Ｍ４えくそだす！', 'http://m4ex.com/'],
   ['BAN=>ドウコレ', 'http://doucolle.net/'],
   ['にじもえ！', 'http://nijimoemoe.com/'],
@@ -51,19 +61,11 @@ final List illustraionPicList = [
   ['BAN=>萌えエロ画像.com', 'https://二次萌えエロ画像.com/'],
   ['三次=>お宝エログ幕府', 'https://bakufu.jp/'],
   ['エロコン', 'http://erocon.gger.jp/'],
-  ['二次ろぐぴんく', 'https://2ji.pink/'], //yes
-  ['えっちなお姉さん。', 'http://hnalady.com/'],
-  ['イチヌケ', 'https://ichinuke.com/'], // yes
-  ['せくあど', 'https://sexuad.blog.fc2.com/'],
-  ['虹フェチちゃんねる', 'https://nijifeti.com/'], //yes
   ['BAN=>エロログZ', 'https://erologz.com/'],
-  ['えろまじょさん', 'https://hentai-witch.com/'], //yes
-  ['桃色虹画像', 'http://momoniji.com/'], //yes
   ['三次!アダルトG', 'http://adult-gazou.me/'],
   ['三次!ときめき速報', 'https://news.tokimeki-s.com/'],
   ['二次エロ専門チャンネル', 'http://nijisenmon.work/'],
   ['エロ画像が見たいんだ！', 'https://eromitai.com/'],
-  ['二次エロ画庫', 'https://2jiero.net/'],
   ['あだまん', 'https://adaman-ero.com/'],
   ['フェビアンテナ', 'http://fevian.org/image/'],
   ['もぎたてエロ画像', 'https://mogiero.blog.fc2.com/'],
@@ -116,6 +118,12 @@ const List<List> siteListUnEro = [
     'https://lolipedia.org/',
     9,
   ],
+  [
+    'Fail 二次エロ画庫',
+    'https://icons.feedercdn.com/2jiero.net/',
+    'https://2jiero.net/',
+    12
+  ],
 ];
 
 const List<List> siteListEro = [
@@ -154,7 +162,19 @@ const List<List> siteListEro = [
     'https://icons.feedercdn.com/hentai-witch.com/',
     'https://hentai-witch.com/',
     7
-  ]
+  ],
+  [
+    'ヌキヌキ二次エロ画像',
+    'https://icons.feedercdn.com/nukigazo.com/',
+    'https://nukigazo.com/',
+    10,
+  ],
+  [
+    '二次エロ画像館',
+    'https://icons.feedercdn.com/erokan.net/',
+    'https://erokan.net/',
+    11,
+  ],
 ];
 
 List<int> pageNumPerSite = [
@@ -168,6 +188,9 @@ List<int> pageNumPerSite = [
   15, //hentai-witch
   30, //虹フェチちゃんねる
   10, //可愛い二次少女大好き
+  30, //'ヌキヌキ二次エロ画像'
+  20, //二次エロ画像館
+  22, //二次エロ画庫
 ];
 List<int> siteParseMethod = [
   0,
@@ -180,6 +203,9 @@ List<int> siteParseMethod = [
   7,
   8,
   9,
+  10,
+  11,
+  12,
 ];
 
 // class Global {

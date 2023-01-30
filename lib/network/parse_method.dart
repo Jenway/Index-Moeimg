@@ -146,6 +146,40 @@ class SiteParse {
   static siteTitleKawaii(HtmlXPath html, int i) =>
       html.query('//*[@id="list"]/a/@title').attrs[i]!;
 
+  //'ヌキヌキ二次エロ画像'
+
+  static siteSrcNukikukko(HtmlXPath html, int i) =>
+      html.query('//*[@id^="post"]/figure/a/img/@src').attrs[i]!;
+  static siteHrefNukikukko(HtmlXPath html, int i) =>
+      html.query('//*[@id^="post"]/figure/a/@href').attrs[i]!;
+  static siteTitleNukikukko(HtmlXPath html, int i) =>
+      html.query('//*[@id^="post"]/figure/a/@title').attrs[i]!;
+
+  //二次エロ画像館
+  static siteSrcNijierogazou(HtmlXPath html, int i) =>
+      html.query('//*[@id="list"]/a/article/figure/img/@src').attrs[i]!;
+  static siteHrefNijierogazou(HtmlXPath html, int i) =>
+      html.query('//*[@id="list"]/a/@href').attrs[i]!;
+  static siteTitleNijierogazou(HtmlXPath html, int i) =>
+      html.query('//*[@id="list"]/a/@title').attrs[i]!;
+
+  //二次エロ画庫
+  // static siteSrcNijierogako(HtmlXPath html, int i) => html
+  //     .query('//*[@class="toc grid clearfix"]/section/figure/a/img/@src')
+  //     .attrs[i]!;
+
+  //SVG 防爬虫，大失败
+  static siteSrcNijierogako(HtmlXPath html, int i) =>
+      'https://2jiero.net/wp-content/uploads/2023/01/23012818001.jpg';
+
+  // https://2jiero.net/wp-content/uploads/2023/01/23012818001.jpg
+  static siteHrefNijierogako(HtmlXPath html, int i) => html
+      .query('//*[@class="toc grid clearfix"]/section/figure/a/@href')
+      .attrs[i]!;
+  static siteTitleNijierogako(HtmlXPath html, int i) => html
+      .query('//*[@class="toc grid clearfix"]/section/h2/a/text()')
+      .attrs[i]!;
+
   static List src = [
     siteSrcMoeimg,
     siteSrcGnnji,
@@ -157,6 +191,9 @@ class SiteParse {
     siteSrcHentaiWitch,
     siteSrcNijifetich,
     siteSrcKawaii,
+    siteSrcNukikukko,
+    siteSrcNijierogazou,
+    siteSrcNijierogako,
   ];
   static List href = [
     siteHrefMoeimg,
@@ -169,6 +206,9 @@ class SiteParse {
     siteHrefHentaiWitch,
     siteHrefNijifetich,
     siteHrefKawaii,
+    siteHrefNukikukko,
+    siteHrefNijierogazou,
+    siteHrefNijierogako,
   ];
   static List title = [
     siteTitleMoeimg,
@@ -181,6 +221,9 @@ class SiteParse {
     siteTitleHentaiWitch,
     siteTitleNijifetich,
     siteTitleKawaii,
+    siteTitleNukikukko,
+    siteTitleNijierogazou,
+    siteTitleNijierogako,
   ];
 
   // is there any explict way to do this?
@@ -241,6 +284,19 @@ class PageParse {
     return list;
   }
 
+//*[@id="the-content"]/p[3]/a
+//html/body/div[1]/div[1]/div/main/div/div[2]/article/div/p[3]/a/img
+//html/body/div[1]/div[1]/div/main/div/div[2]/article/div/p[4]/a[1]/img
+  static List<String> nukikukko({required HtmlXPath html}) =>
+      html.query('//*[@id="the-content"]/p/a/img/@src').attrs.cast<String>();
+  static List<String> nijierogazou({required HtmlXPath html}) =>
+      html.query('//*[@id^="post"]/div/p/img/@src').attrs.cast<String>();
+
+  static List<String> nijierogako({required HtmlXPath html}) => html
+      .query('//*[@id="mainEntity"]/div[1]/p/a/img/@src')
+      .attrs
+      .cast<String>();
+
   static List<Function> page = [
     moeImg,
     gnnji,
@@ -252,5 +308,8 @@ class PageParse {
     hentaiWitch,
     nijifetich,
     kawaii,
+    nukikukko,
+    nijierogazou,
+    nijierogako,
   ];
 }
