@@ -50,13 +50,13 @@ final List illustraionPicList = [
   ['BAN=>萌えエロ画像.com', 'https://二次萌えエロ画像.com/'],
   ['三次=>お宝エログ幕府', 'https://bakufu.jp/'],
   ['エロコン', 'http://erocon.gger.jp/'],
-  ['二次ろぐぴんく', 'https://2ji.pink/'],
+  ['二次ろぐぴんく', 'https://2ji.pink/'], //yes
   ['えっちなお姉さん。', 'http://hnalady.com/'],
   ['イチヌケ', 'https://ichinuke.com/'], // yes
   ['せくあど', 'https://sexuad.blog.fc2.com/'],
   ['虹フェチちゃんねる', 'https://nijifeti.com/'],
   ['BAN=>エロログZ', 'https://erologz.com/'],
-  ['えろまじょさん', 'https://hentai-witch.com/'],
+  ['えろまじょさん', 'https://hentai-witch.com/'], //yes
   ['桃色虹画像', 'http://momoniji.com/'], //yes
   ['三次!アダルトG', 'http://adult-gazou.me/'],
   ['三次!ときめき速報', 'https://news.tokimeki-s.com/'],
@@ -68,12 +68,13 @@ final List illustraionPicList = [
   ['もぎたてエロ画像', 'https://mogiero.blog.fc2.com/'],
   ['看不懂', 'https://www.po-kaki-to.com/'],
   ['蛮有趣', 'https://pioncoo.net/'],
-  ['MMD', 'https://ero-mmd.com/221102-2/']
+  ['MMD', 'https://ero-mmd.com/221102-2/'],
+  ['NETERRO', 'http://kyarabetsunijiero.net/']
 ];
 
 const List<List> siteListUnEro = [
   [
-    'Gennji 非・微エロ画像',
+    '厳選2次元画像館 非・微エロ画像',
     'https://icons.feedercdn.com/gennji.com',
     'https://gennji.com/category/%e3%80%90-%e9%9d%9e%e3%83%bb%e5%be%ae%e3%82%a8%e3%83%ad%e7%94%bb%e5%83%8f-%e3%80%91/',
     1,
@@ -85,7 +86,7 @@ const List<List> siteListUnEro = [
     0,
   ],
   [
-    'Gennji キャラ',
+    '厳選2次元画像館 キャラ',
     'https://icons.feedercdn.com/gennji.com',
     'https://gennji.com/category/%e3%80%90-%e3%82%ad%e3%83%a3%e3%83%a9%e7%94%bb%e5%83%8f-%e3%80%91/',
     1,
@@ -96,11 +97,23 @@ const List<List> siteListUnEro = [
     'http://momoniji.com/',
     5
   ],
+  [
+    '二次ろぐぴんく',
+    'https://icons.feedercdn.com/2ji.pink/',
+    'https://2ji.pink/',
+    6,
+  ],
+  [
+    '虹フェチちゃんねる',
+    'https://icons.feedercdn.com/nijifeti.com/',
+    'https://nijifeti.com/',
+    8,
+  ],
 ];
 
 const List<List> siteListEro = [
   [
-    'Gennji エロ画像',
+    '厳選2次元画像館 エロ画像',
     'https://icons.feedercdn.com/gennji.com',
     'https://gennji.com/category/%e3%80%90-%e3%82%a8%e3%83%ad%e7%94%bb%e5%83%8f-%e3%80%91/',
     1,
@@ -129,6 +142,12 @@ const List<List> siteListEro = [
     'https://ichinuke.com/',
     4
   ],
+  [
+    'hentai-witch',
+    'https://icons.feedercdn.com/hentai-witch.com/',
+    'https://hentai-witch.com/',
+    7
+  ]
 ];
 
 List<int> pageNumPerSite = [
@@ -138,6 +157,9 @@ List<int> pageNumPerSite = [
   11, //キモ男陵辱同人道
   30, //イチヌケ
   15, //桃色虹画像
+  21, //二次ろぐぴんく
+  15, //hentai-witch
+  30, //虹フェチちゃんねる
 ];
 List<int> siteParseMethod = [
   0,
@@ -146,6 +168,9 @@ List<int> siteParseMethod = [
   3,
   4,
   5,
+  6,
+  7,
+  8,
 ];
 
 // class Global {

@@ -96,6 +96,43 @@ class SiteParse {
   static siteTitleMomoniji(HtmlXPath html, int i) =>
       html.query('//*[@id="list"]/a/@title').attrs[i]!;
 
+  //二次ろぐぴんく
+
+  //*[@id="list"]/div[2]/section/h2/a
+  //*[@id="tile-2"]/div[1]/section/h2/a
+  //*[@id="tile-2"]/div[2]/section/h2/a
+//html/body/div[3]/div[3]/div[1]/main/div/div/div[2]/section/h2/a
+//html/body/div[3]/div[3]/div[1]/main/div/div/div[3]/div[1]/section/h2/a
+//html/body/div[3]/div[3]/div[1]/main/div/div/div[3]/div[2]/section/h2/a
+//*[@id="tile-2"]/div[1]/section/figure/a/img
+  static siteSrcNijilog(HtmlXPath html, int i) => html
+      .query('//*[@class="toc grid clearfix"]/section/figure/a/img/@src')
+      .attrs[i]!;
+  static siteHrefNijilog(HtmlXPath html, int i) => html
+      .query('//*[@class="toc grid clearfix"]/section/h2/a/@href')
+      .attrs[i]!;
+  static siteTitleNijilog(HtmlXPath html, int i) => html
+      .query('//*[@class="toc grid clearfix"]/section/h2/a/text()')
+      .attrs[i]!;
+
+//hentai-witch
+//html/body/div/div[4]/div/main/div[1]/a[1]/article/figure/img
+  static siteSrcHentaiWitch(HtmlXPath html, int i) =>
+      html.query('//*[@id="list"]/a/article/figure/img/@src').attrs[i]!;
+  static siteHrefHentaiWitch(HtmlXPath html, int i) =>
+      html.query('//*[@id="list"]/a/@href').attrs[i]!;
+  static siteTitleHentaiWitch(HtmlXPath html, int i) =>
+      html.query('//*[@id="list"]/a/@title').attrs[i]!;
+
+//虹フェチちゃんねる
+
+  static siteSrcNijifetich(HtmlXPath html, int i) =>
+      'https://nijifeti.com/wp-content/uploads/2023/01/kurokami-072-19.jpg';
+  static siteHrefNijifetich(HtmlXPath html, int i) =>
+      html.query('//*[@id^="post"]/h2/a/@href').attrs[i]!;
+  static siteTitleNijifetich(HtmlXPath html, int i) =>
+      html.query('//*[@id^="post"]/h2/a/text()').attrs[i]!;
+
   static List src = [
     siteSrcMoeimg,
     siteSrcGnnji,
@@ -103,6 +140,9 @@ class SiteParse {
     siteSrcKimonan,
     siteSrcIchinuke,
     siteSrcMomoniji,
+    siteSrcNijilog,
+    siteSrcHentaiWitch,
+    siteSrcNijifetich,
   ];
   static List href = [
     siteHrefMoeimg,
@@ -111,6 +151,9 @@ class SiteParse {
     siteHrefKimonan,
     siteHrefIchinuke,
     siteHrefMomoniji,
+    siteHrefNijilog,
+    siteHrefHentaiWitch,
+    siteHrefNijifetich,
   ];
   static List title = [
     siteTitleMoeimg,
@@ -119,6 +162,9 @@ class SiteParse {
     siteTitleKimonan,
     siteTitleIchinuke,
     siteTitleMomoniji,
+    siteTitleNijilog,
+    siteTitleHentaiWitch,
+    siteTitleNijifetich,
   ];
 
   // is there any explict way to do this?
@@ -153,16 +199,30 @@ class PageParse {
           '//*[@id^="post"]/div/figure/figure[@class="wp-block-image size-large"]/a/@href')
       .attrs
       .cast<String>();
-//*[@id="post-839676"]/div[2]/ol/li[1]/a
-//*[@id="post-839676"]/div[2]/ol/li[2]/a
+
   static List<String> momoniji({required HtmlXPath html}) =>
       html.query('//*[@id^="post"]/div[2]/ol/li/a/@href').attrs.cast<String>();
+
+  static List<String> nijilog({required HtmlXPath html}) => html
+      .query('//*[@id="mainEntity"]/div[2]/p/a/img/@src')
+      .attrs
+      .cast<String>();
+
+  static List<String> hentaiWitch({required HtmlXPath html}) =>
+      html.query('//*[@id^="post"]/div[2]/figure/a/@href').attrs.cast<String>();
+
+  static List<String> nijifetich({required HtmlXPath html}) =>
+      html.query('//*[@id="main-content"]/ol/li/a/@href').attrs.cast<String>();
+
   static List<Function> page = [
     moeImg,
     gnnji,
     jinshi,
     kimonan,
     ichinuke,
-    momoniji
+    momoniji,
+    nijilog,
+    hentaiWitch,
+    nijifetich,
   ];
 }

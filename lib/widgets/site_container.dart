@@ -3,11 +3,11 @@ import 'package:cached_network_image/cached_network_image.dart';
 
 class SiteContainer extends StatelessWidget {
   // 构造方法，设置传参
-  const SiteContainer(
-      {super.key,
-      required this.title,
-      required this.src,
-      });
+  const SiteContainer({
+    super.key,
+    required this.title,
+    required this.src,
+  });
   final String title, src;
 
   @override
@@ -27,7 +27,22 @@ class SiteContainer extends StatelessWidget {
               flex: 1,
             ),
             ListTile(
-              subtitle: Text(title),
+              subtitle: Text(
+                title,
+                style: const TextStyle(
+                    fontSize: 16,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.white,
+                    shadows: [
+                      Shadow(
+                        color: Colors.black,
+                        offset: Offset(1, 1),
+                        blurRadius: 1,
+                      ),
+                    ],
+                    // backgroundColor: Color.fromARGB(125, 0, 0, 0),
+                    ),
+              ),
             ),
           ],
         ));

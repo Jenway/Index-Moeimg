@@ -147,6 +147,7 @@ class _ImageGuideState extends State<ImageGuide> {
       appBar: widget.isAppbar
           ? AppBar(
               title: Text(widget.siteHomeTitle),
+              
             )
           : null,
       body: FutureBuilder(

@@ -21,7 +21,8 @@ class SiteCard extends Card {
   Widget build(BuildContext context) {
     return Card(
         child: ListTile(
-      title: Text(title),
+      title: Text(title, style: const TextStyle(fontSize: 18),
+      ),
       leading: CircleAvatar(
         backgroundImage: CachedNetworkImageProvider(imageURL),
       ),
