@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
 
 import 'package:dio/dio.dart';
@@ -88,6 +90,7 @@ class _ImageGuideState extends State<ImageGuide> {
         headers: {
           'User-Agent':
               'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/92.0.4515.159 Safari/537.36',
+              
         },
       ),
     );
@@ -130,7 +133,8 @@ class _ImageGuideState extends State<ImageGuide> {
         },
       ),
     );
-    final document = parse(response.data).documentElement!;
+    final resdata = utf8.encode(response.data);
+    final document = parse(resdata).documentElement!;
     final html = HtmlXPath.node(document);
     return PageParse.page[widget.siteParseMethod](html: html);
   }

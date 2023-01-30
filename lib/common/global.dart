@@ -33,31 +33,31 @@ const List<String> primariesName = [
   '夜间/Night',
 ];
 final List illustraionPicList = [
-  ['二次萌エロ画像ブログ', 'https://moeimg.net/'],
+  ['二次萌エロ画像ブログ', 'https://moeimg.net/'], //yes
   ['みゃおーん 二次エロ画像', 'https://myaoon.com/niji/'],
   ['二次元エロ画像萌え２', 'http://nijierogazou.moemoe.xyz/'],
-  ['厳選2次元画像館 げんにじ', 'https://gennji.com/'],
-  ['今夜のシチュエロ画像', 'https://situero.com/'], // fast
+  ['厳選2次元画像館 げんにじ', 'https://gennji.com/'], // yes
+  ['今夜のシチュエロ画像', 'https://situero.com/'], // fast yes
   ['画像(2次) - HNあんてな', 'http://hn-antena.com/gazo2.html'], //fast
   ['エログちゃんねるあんてな', 'https://www.elog-ch.net/'],
   ['二次元画像詳細検索', 'https://ascii2d.net/'],
   ['画像,２次元,３次元,ブログ,まとめ,アンテナ', 'https://img.favsite.jp/'],
-  ['キモ男陵辱同人道', 'https://kimootoko.net/'], //fast
+  ['キモ男陵辱同人道', 'https://kimootoko.net/'], //fast yes
   ['BAN=>Ｍ４えくそだす！', 'http://m4ex.com/'],
   ['BAN=>ドウコレ', 'http://doucolle.net/'],
   ['にじもえ！', 'http://nijimoemoe.com/'],
   ['FANZA=>えろまん', 'https://eroman.vuevis.jp/'],
   ['BAN=>萌えエロ画像.com', 'https://二次萌えエロ画像.com/'],
-  ['FANZA=>お宝エログ幕府', 'https://bakufu.jp/'],
+  ['三次=>お宝エログ幕府', 'https://bakufu.jp/'],
   ['エロコン', 'http://erocon.gger.jp/'],
   ['二次ろぐぴんく', 'https://2ji.pink/'],
   ['えっちなお姉さん。', 'http://hnalady.com/'],
-  ['イチヌケ', 'https://ichinuke.com/'],
+  ['イチヌケ', 'https://ichinuke.com/'], // yes
   ['せくあど', 'https://sexuad.blog.fc2.com/'],
   ['虹フェチちゃんねる', 'https://nijifeti.com/'],
   ['BAN=>エロログZ', 'https://erologz.com/'],
   ['えろまじょさん', 'https://hentai-witch.com/'],
-  ['桃色虹画像', 'http://momoniji.com/'],
+  ['桃色虹画像', 'http://momoniji.com/'], //yes
   ['三次!アダルトG', 'http://adult-gazou.me/'],
   ['三次!ときめき速報', 'https://news.tokimeki-s.com/'],
   ['二次エロ専門チャンネル', 'http://nijisenmon.work/'],
@@ -65,7 +65,10 @@ final List illustraionPicList = [
   ['二次エロ画庫', 'https://2jiero.net/'],
   ['あだまん', 'https://adaman-ero.com/'],
   ['フェビアンテナ', 'http://fevian.org/image/'],
-  ['もぎたてエロ画像', 'https://mogiero.blog.fc2.com/']
+  ['もぎたてエロ画像', 'https://mogiero.blog.fc2.com/'],
+  ['看不懂', 'https://www.po-kaki-to.com/'],
+  ['蛮有趣', 'https://pioncoo.net/'],
+  ['MMD', 'https://ero-mmd.com/221102-2/']
 ];
 
 const List<List> siteListUnEro = [
@@ -86,6 +89,12 @@ const List<List> siteListUnEro = [
     'https://icons.feedercdn.com/gennji.com',
     'https://gennji.com/category/%e3%80%90-%e3%82%ad%e3%83%a3%e3%83%a9%e7%94%bb%e5%83%8f-%e3%80%91/',
     1,
+  ],
+  [
+    '桃色虹画像',
+    'https://icons.feedercdn.com/momoniji.com/',
+    'http://momoniji.com/',
+    5
   ],
 ];
 
@@ -108,17 +117,35 @@ const List<List> siteListEro = [
     'https://situero.com/',
     2,
   ],
+  [
+    'キモ男陵辱同人道',
+    'https://icons.feedercdn.com/kimootoko.net/',
+    'https://kimootoko.net/',
+    3
+  ],
+  [
+    'イチヌケ',
+    'https://icons.feedercdn.com/ichinuke.com/',
+    'https://ichinuke.com/',
+    4
+  ],
 ];
 
 List<int> pageNumPerSite = [
   10, //moeimg
   20, //gennji
   20, //今夜のシチュエロ画像
+  11, //キモ男陵辱同人道
+  30, //イチヌケ
+  15, //桃色虹画像
 ];
 List<int> siteParseMethod = [
   0,
   1,
   2,
+  3,
+  4,
+  5,
 ];
 
 // class Global {
