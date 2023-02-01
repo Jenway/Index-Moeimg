@@ -3,14 +3,17 @@ import 'package:dio/dio.dart';
 // create a class for dowoloading pictures from the internet
 class Download {
   // create a function for downloading pictures from the internet
-  Future<void> downloadFile(String url, String savePath) async {
+  Future<void> downloadFile(
+    String url,
+    String savePath, {
+    CancelToken? cancelToken,
+  }) async {
     try {
       // create a dio object
       Dio dio = Dio();
       // download pictures from the internet
       await dio.download(url, savePath,
-          onReceiveProgress: showDownloadProgress);
-    
+          cancelToken: cancelToken, onReceiveProgress: showDownloadProgress);
     } catch (e) {
       // print(e);
     }
@@ -23,6 +26,3 @@ class Download {
     }
   }
 }
-
-
-

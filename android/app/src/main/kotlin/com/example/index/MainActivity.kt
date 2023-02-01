@@ -1,4 +1,4 @@
-package com.example.index
+package com.jenway.index
 
 import io.flutter.embedding.android.FlutterActivity
 

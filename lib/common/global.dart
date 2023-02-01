@@ -9,6 +9,9 @@ const _themes = <MaterialColor>[
   Colors.red,
 ];
 
+const String downloadPath = '_Download/';
+
+
 const List<String> primariesName = [
   '红色/Red',
   '粉色/Pink',

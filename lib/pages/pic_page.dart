@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:cached_network_image/cached_network_image.dart';
+import 'package:index/common/global.dart';
 import 'package:photo_view/photo_view.dart';
 import 'package:index/network/download.dart';
 
@@ -82,7 +83,7 @@ class _PicPageState extends State<PicPage> {
                         onPressed: () {
                           Download().downloadFile(
                             picAddress,
-                            '_Download/${widget.picSource}_$picName.jpg',
+                            '$downloadPath${widget.picSource}_$picName.jpg',
                           );
                         },
                       ),
